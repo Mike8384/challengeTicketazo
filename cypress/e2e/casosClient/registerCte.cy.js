@@ -1,4 +1,4 @@
-import { generarDNI, generarEmail, generarTelefono, generarCUIT } from '../utils/generators'
+import { generarEmail, generarTelefono, generarCUIT } from '../utils/generators'
 
 
 describe('template spec', () => {
