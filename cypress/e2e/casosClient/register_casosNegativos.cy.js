@@ -1,12 +1,13 @@
-import { generarDNI, generarEmail, generarTelefono, generarCUIT } from '../utils/generators'
+import { generarDNI, generarEmail, generarTelefono, generarCUIT } from '../../utils/generators'
 
 
 describe('Casos negativos', () => {
     beforeEach(() => {
         cy.visit('/auth/registerClient') //viene del base url configurado en cypress.config.js
     });
-    it('2- Correo invalido', () => {
-        cy.fixture('register.ok.json').then((cliente) => {
+    it('Correo invalido', () => {
+        cy.fixture('registerCteEvent.json').then((data) => {
+            const cliente = {...data.ok}
             // Sobrescribo datos para que sean únicos o inválidos
             cliente.CUIT = generarCUIT()
             cliente.telefono = generarTelefono()
@@ -23,80 +24,25 @@ describe('Casos negativos', () => {
         })
     })
 
-        it('3-Campos vacios (parte 1)', () => {
-        cy.fixture('register.bad_vacios1.json').then((cliente) => {
+        it('Campos vacios', () => {
+        cy.fixture('registerCteEvent.json').then((data) => {
+            const cliente = {...data.camposVacios}
             /*Campos vacios: razon social - cuit - provincia y localidad*/
             cliente.telefono = generarTelefono()
             cliente.confirmarEmail = cliente.email
             cy.registroCte(cliente)//llamo al commands
             //BTN registrarse
             cy.get('[data-cy="btn-registrarse"]').click()
-
-            cy.log('Validando Razon Social')
-            cy.get('div[data-slot="error-message"]') 
-            .should('contain.text', 'Completa este campo')
-
-            cy.log('Validando CUIT')
-            cy.get('div[data-slot="error-message"]') 
-            .should('contain.text', 'Completa este campo')
-
-            cy.log('Validando Provincia')
-            cy.get('div[data-slot="error-message"]') 
-            .should('contain.text', 'Completa este campo')
-
-            cy.log('Validando Localidad')
-            cy.get('div[data-slot="error-message"]') 
-            .should('contain.text', 'Completa este campo')
+            cy.validarErrorCampoVacio('Completa este campo') /*todos tienen en mismo mensaje*/
             //validar boton del login
             cy.url().should('include', '/auth/registerClient')
         })
     })
 
-    it('4-Campos vacios (parte 2)', () => {
-        cy.fixture('register.bad_vacios2.json').then((cliente) => {
-            /*Campos vacios: direccion, telefono, emai, contraseña*/
-            cliente.telefono = generarTelefono()
-            cliente.confirmarEmail = cliente.email
-            cy.registroCte(cliente)//llamo al commands
-            //BTN registrarse
-            cy.get('[data-cy="btn-registrarse"]').click()
-            cy.log('Validando Direccion')
-            cy.get('div[data-slot="error-message"]') 
-            .should('contain.text', 'Completa este campo')
-            cy.log('Validando telefono')
-            cy.get('div[data-slot="error-message"]') 
-            .should('contain.text', 'Completa este campo')
-            cy.log('Validando Email')
-            cy.get('div[data-slot="error-message"]') 
-            .should('contain.text', 'Completa este campo')
-            cy.log('Validando Contraseña')
-            cy.get('div[data-slot="error-message"]') 
-            .should('contain.text', 'Completa este campo')
-            //validar boton del login
-            cy.url().should('include', '/auth/registerClient')
-        })
-    })
-
-        it('5-Campos vacios (parte 3)', () => {
-        cy.fixture('register.bad_vacios3.json').then((cliente) => {
-            /*Campos vacios: confirmarEmail - confirmarContraseña*/
-            cliente.telefono = generarTelefono()
-            cy.registroCte(cliente)//llamo al commands
-            //BTN registrarse
-            cy.get('[data-cy="btn-registrarse"]').click()
-            cy.log('Validando Confirmar Email')
-            cy.get('div[data-slot="error-message"]') 
-            .should('contain.text', 'Completa este campo')
-            cy.log('Validando Confirmar contraseña')
-            cy.get('div[data-slot="error-message"]') 
-            .should('contain.text', 'Completa este campo')
-            //validar boton del login
-            cy.url().should('include', '/auth/registerClient')
-        })
-    })
-
-        it('6-Contraseña no valida', () => {
-        cy.fixture('register.ok').then((cliente) => {
+    
+        it('Contraseña no valida', () => {
+        cy.fixture('registerCteEvent.json').then((data) => {
+            const cliente = {...data.ok}
             /*Contraseña no valida: 000*/
             cliente.telefono = generarTelefono()
             cliente.password = '000'
@@ -112,9 +58,9 @@ describe('Casos negativos', () => {
         })
     })
 
-        it('7-Largo máximo del campo Dirección', () => {
-        cy.fixture('register.ok').then((cliente) => {
-            /*Campos vacios: confirmarEmail - confirmarContraseña*/
+        it('Largo máximo del campo Dirección_FALLA', () => {
+        cy.fixture('registerCteEvent.json').then((data) => {
+            const cliente = {...data.ok}
             cliente.CUIT = generarCUIT()
             cliente.telefono = generarTelefono()
             cliente.email = generarEmail()
@@ -130,8 +76,4 @@ describe('Casos negativos', () => {
             cy.url().should('include', '/auth/registerClient')
         })
     })
-
-
-
-
 })

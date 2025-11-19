@@ -1,4 +1,4 @@
-import { generarEmail, generarTelefono, generarCUIT } from '../utils/generators'
+import { generarEmail, generarTelefono, generarCUIT } from '../../utils/generators'
 
 
 describe('template spec', () => {
@@ -9,7 +9,8 @@ describe('template spec', () => {
 
   it('1- Registro exitoso', () => {
 
-      cy.fixture('register.ok.json').then((cliente) => {
+      cy.fixture('registerCteEvent.json').then((data) => {
+      const cliente = {...data.ok}
     
       cliente.CUIT = generarCUIT()
       cliente.telefono = generarTelefono()

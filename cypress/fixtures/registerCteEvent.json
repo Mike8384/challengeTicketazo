@@ -1,0 +1,37 @@
+{
+    "ok": {
+        "razonSocial": "Empresa X",
+        "CUIT": "20304050607",
+        "provincia": "Córdoba",
+        "localidad": "Córdoba",
+        "direccion": "Calle Falsa 123",
+        "telefono": "3511234567",
+        "email": "correo@ejemplo25.com",
+        "confirmarEmail": "correo@ejemplo25.com",
+        "password": "Test1234!",
+        "confirmarPassword": "Test1234!"
+    },
+    "invalidEmail": {
+        "email": "correo.com",
+        "confirmarEmail": "correo.com"
+    },
+    "camposVacios": {
+        "razonSocial": "",
+        "CUIT": "",
+        "provincia": "",
+        "localidad": "",
+        "direccion": "",
+        "telefono": "",
+        "email": "",
+        "confirmarEmail": "",
+        "password": "",
+        "confirmarPassword": ""
+    },
+    "shortPassword": {
+        "password": "123",
+        "confirmarPassword": "123"
+    },
+    "direccionLarga": {
+        "direccion": "Esta es una dirección muy larga que excede los 250 caracteres..." 
+    }
+}
