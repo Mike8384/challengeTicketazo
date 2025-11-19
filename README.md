@@ -1,60 +1,30 @@
 # Challenge Ticketazo
-
 Automatización de pruebas end-to-end para la plataforma Ticketazo, desarrollada con Cypress.
-
-
 
 Este repositorio contiene los tests funcionales que validan los flujos principales del sistema basados en el Documento Funcional y el Manual de Testing. El objetivo es asegurar la calidad del producto mediante la ejecución de pruebas automatizadas, manteniendo una estructura clara, comandos reutilizables y datos de prueba organizados.
 
+### Incluye
+- Casos de prueba E2E
+- Fixtures y datos mock
+- Comandos personalizados
+- Configuración completa de Cypress
+- Guías de instalación y ejecución
+***
 
+##### Plan de pruebas: 
+##### Diseño casos de pruebas: 
 
-### **Incluye**
-
-
-
-\- Casos de prueba E2E
-
-\- Fixtures y datos mock
-
-\- Comandos personalizados
-
-\- Configuración completa de Cypress
-
-\- Guías de instalación y ejecución
-
-
-
-### Plan de pruebas
-
-
-
-Diseño y ejecución de casos de prueba para validar los flujos críticos de la plataforma.
-
-
-
+***
 ### Requisitos Previos
-
-
 
 Asegúrate de tener instalado:
 
-
-
 - Node.js v16 o superior
-
 - npm (incluido con Node)
-
-- Verificar versiones:
-
-node -v
-
-npm -v
-
+- Verificar versiones: node -v  |  npm -v
 
 
 ### Instalación
-
-
 
 1. Clonar el repositorio:
 
@@ -90,7 +60,7 @@ npx cypress open
 
 ```
 
-### structura del proyecto
+### Estructura del proyecto
 
 ```
 cypress/
