@@ -56,3 +56,8 @@ Cypress.Commands.add('registroCte', (cliente) => {
         cy.get('[data-cy="input-repetir-password"]').type(cliente.confirmarPassword)
     }
 })
+
+Cypress.Commands.add('validarErrorCampoVacio', (mensaje) => {
+    cy.get('div[data-slot="error-message"]').should('contain.text', mensaje)
+})
+
