@@ -13,6 +13,7 @@ Este repositorio contiene los tests funcionales que validan los flujos principal
 
 ##### Plan de pruebas: https://docs.google.com/document/d/1lBaXnM-BtZWtxtE3xXxVH18phluDjn_3/edit?usp=sharing&ouid=112844744323252161665&rtpof=true&sd=true
 ##### Diseño casos de pruebas: https://docs.google.com/spreadsheets/d/1Jg89hQIdCZISMT2pMTnjl1xEp3-3pILh/edit?usp=drive_link&ouid=112844744323252161665&rtpof=true&sd=true
+##### Trello (para reporte de bugs): https://trello.com/invite/b/691f682cdf2dc1ce46519adf/ATTI7329f2cf98ef243a8703a74cf0d2cf0a24F04FD8/tickets
 
 ***
 ### Requisitos Previos
