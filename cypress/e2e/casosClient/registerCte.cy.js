@@ -2,7 +2,6 @@ import { generarEmail, generarTelefono, generarCUIT } from '../../utils/generato
 
 
 describe('template spec', () => {
-
   beforeEach(() => {
         cy.visit('/auth/registerClient') //viene del base url configurado en cypress.config.js
     });
@@ -11,7 +10,6 @@ describe('template spec', () => {
 
       cy.fixture('registerCteEvent.json').then((data) => {
       const cliente = {...data.ok}
-    
       cliente.CUIT = generarCUIT()
       cliente.telefono = generarTelefono()
       cliente.email = generarEmail()
@@ -24,6 +22,5 @@ describe('template spec', () => {
       //validar boton del login
       cy.contains('Login').should('be.visible')
     })
-
   })
 })

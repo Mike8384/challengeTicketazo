@@ -1,4 +1,9 @@
 {
+    "loginOk": {
+        "email": "empresa_qa@mailinator.com",
+        "password": "Vero12345!"
+    },
+    
     "ok": {
         "razonSocial": "Empresa X",
         "CUIT": "20304050607",

@@ -61,3 +61,12 @@ Cypress.Commands.add('validarErrorCampoVacio', (mensaje) => {
     cy.get('div[data-slot="error-message"]').should('contain.text', mensaje)
 })
 
+
+Cypress.Commands.add('LoginExito', (cliente) => {
+    cy.get('[data-cy="input-email"]').type(cliente.email)
+    cy.get('[data-cy="input-password"]').type(cliente.password)
+    cy.get('[data-cy="btn-login"]').click()
+    cy.url().should('eq', 'https://ticketazo.com.ar/')
+    cy.get('input[placeholder="Busca tu próxima función!"]').should('be.visible')
+})
+
