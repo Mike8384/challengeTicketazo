@@ -10,6 +10,7 @@ Este repositorio contiene los tests funcionales que validan los flujos principal
 - Configuración completa de Cypress
 - Guías de instalación y ejecución
 ***
+### Recursos de pruebas
 
 ##### Plan de pruebas: https://docs.google.com/document/d/1lBaXnM-BtZWtxtE3xXxVH18phluDjn_3/edit?usp=sharing&ouid=112844744323252161665&rtpof=true&sd=true
 ##### Diseño casos de pruebas: https://docs.google.com/spreadsheets/d/1Jg89hQIdCZISMT2pMTnjl1xEp3-3pILh/edit?usp=drive_link&ouid=112844744323252161665&rtpof=true&sd=true

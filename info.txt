@@ -1,0 +1,2 @@
+Para grabar un video evidencia se ejecutara el test con el bug:
+npx cypress run --spec "cypress/e2e/casosClient/register_casosNegativos.cy.js"
