@@ -13,4 +13,3 @@ describe('Logout - Caso exitoso', () => {
         cy.logout()
     })
 })
-

@@ -38,5 +38,9 @@
     },
     "direccionLarga": {
         "direccion": "Esta es una dirección muy larga que excede los 250 caracteres..." 
+    },
+    "invalidCredentials": {
+        "email": "empresa_qa@mailinator.com",
+        "password": "test123"
     }
 }
