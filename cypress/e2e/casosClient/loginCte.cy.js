@@ -1,15 +1,14 @@
-describe('Logout - Caso exitoso', () => {
-
-    beforeEach(() => {
+describe('Login - Caso exitoso', () => {
+    beforeEach( () => {      
         cy.visit('/auth/login')
+    });
+
+    it('09. Login exitoso', function () {
         cy.fixture('registerCteEvent.json').then((data) => {
-            cy.wrap(data.loginOk).as('cliente')
+        const cliente = {... data.loginOk}
+        cy.Login(cliente)
         })
     })
-
-    it('El usuario puede cerrar sesión correctamente', function () {
-
-        cy.LoginExito(this.cliente)  
-        cy.logout()
-    })
 })
+    
+
