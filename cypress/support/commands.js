@@ -69,3 +69,14 @@ Cypress.Commands.add('Login', (cliente) => {
     
 })
 
+Cypress.Commands.add('logout', () => {
+    cy.get('button').contains('Logout').click({ force: true });
+
+    cy.url().should('eq', 'https://ticketazo.com.ar/');
+
+    cy.get('input[placeholder="Busca tu próxima función!"]').should('be.visible');
+});
+
+
+
+
