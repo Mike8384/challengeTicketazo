@@ -70,7 +70,7 @@ describe('Casos negativos', () => {
             .should('be.visible')
             .invoke('text')
             .should((texto) => {
-                expect(texto).to.match(/Please match the requested format|haz coincidir el formato solicitado/i)
+                expect(texto).to.match(/Please match the requested format|Utiliza un formato que coincida con el solicitado/i)
             })
 
         })
@@ -117,7 +117,7 @@ describe('Casos negativos', () => {
             // pongo correo para luego poder ingresar al sistema
             cliente.email = generarEmail()
             cliente.confirmarEmail = cliente.email
-            cliente.direccion = "esta es una direccion muy larga para validar que el campo no permita ingresar una direccion con mas de 250 caracteres"
+            cliente.direccion = "esta es una direccion muy larga para validar que el campo no permita ingresar una direccion con mas de 250 caracteres y para ello se realizará de manera terminante la escritura de una cantidad apoteósica e indescifrable de palabras con el fin último de que se haga realidad este deseo más profundo del corazón"
             
             cy.registroCte(cliente)//llamo al commands
             //BTN registrarse

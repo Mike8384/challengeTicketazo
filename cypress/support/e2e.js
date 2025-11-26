@@ -25,3 +25,4 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     })
 
 import './commands'
+import './jCommands'
