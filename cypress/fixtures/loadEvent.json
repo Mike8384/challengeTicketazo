@@ -1,0 +1,25 @@
+{"evÚnico":{
+    "título": "Ramen Fest",
+    "fecha":  {
+    "day": "12",
+    "month": "12",
+    "year": "2025"
+  },
+    "edad": "ATP",
+    "genero": "Festival",
+    "horario": "2100",
+    "duraciónDelEvento": "0400",
+    "lugarDelEvento": "Otro",
+    "nombreLugar": "Manjares del Olimpo",
+    "calle": "Av. Comandante Fort",
+    "altura": "777",
+    "cp": "5000",
+    "provincia": "Córdoba",
+    "localidad": "Córdoba",
+    "info": "Te pones como loquita de noche, te gusta comer ramen con amigas",
+
+    "entrada": "General",
+    "capacidad": "150",
+    "precio": "0"
+    }
+}
