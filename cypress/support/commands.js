@@ -62,10 +62,21 @@ Cypress.Commands.add('validarErrorCampoVacio', (mensaje) => {
 })
 
 
-Cypress.Commands.add('LoginExito', (cliente) => {
+Cypress.Commands.add('Login', (cliente) => {
     cy.get('[data-cy="input-email"]').type(cliente.email)
     cy.get('[data-cy="input-password"]').type(cliente.password)
     cy.get('[data-cy="btn-login"]').click()
-  
+    
 })
+
+Cypress.Commands.add('logout', () => {
+    cy.get('button').contains('Logout').click({ force: true });
+
+    cy.url().should('eq', 'https://ticketazo.com.ar/');
+
+    cy.get('input[placeholder="Busca tu próxima función!"]').should('be.visible');
+});
+
+
+
 

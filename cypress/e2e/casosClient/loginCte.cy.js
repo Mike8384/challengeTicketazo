@@ -1,11 +1,14 @@
-describe('template spec', () => {
-    beforeEach(() => {
-        cy.visit('/auth/login') //viene del base url configurado en cypress.config.js
+describe('Login - Caso exitoso', () => {
+    beforeEach( () => {      
+        cy.visit('/auth/login')
     });
-    it('8. Login exitoso', () => {
+
+    it('09. Login exitoso', function () {
         cy.fixture('registerCteEvent.json').then((data) => {
-        const cliente = {...data.loginOk}
-        cy.LoginExito(cliente)//llamo al commands
+        const cliente = {... data.loginOk}
+        cy.Login(cliente)
         })
     })
 })
+    
+
