@@ -1,0 +1,48 @@
+{
+  "registroClienteValido": {
+    "razonSocial": "ACME S.A.",
+    "CUIT": "30-12345678-9",
+    "provincia": "Córdoba",
+    "localidad": "Córdoba",
+    "direccion": "Av. Siempre Viva 123",
+    "telefono": "3511234567",
+    "email": "cliente.valido@example.com",
+    "confirmarEmail": "cliente.valido@example.com",
+    "password": "Test12345",
+    "confirmarPassword": "Test12345"
+  },
+
+  "registroClienteVacios": {
+    "razonSocial": "",
+    "CUIT": "",
+    "provincia": "",
+    "localidad": "",
+    "direccion": "",
+    "telefono": "",
+    "email": "",
+    "confirmarEmail": "",
+    "password": "",
+    "confirmarPassword": ""
+  },
+
+  "loginUser": {
+    "email": "cliente.valido@example.com",
+    "password": "P@ssw0rd123"
+  },
+
+  "pruebaHappyUser": {
+    "nombres": "Juan",
+    "apellido": "Pérez",
+    "telefono": "3511234567",
+    "dni": "33222444",
+    "provincia": "Córdoba",
+    "localidad": "Córdoba",
+    "fechaNacimiento": {
+      "day": "15",
+      "month": "08",
+      "year": "1995"
+    },
+    "email": "juan.perez.test@example.com",
+    "password": "Passw0rd!"
+  }
+}

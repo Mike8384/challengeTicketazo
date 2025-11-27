@@ -77,6 +77,34 @@ Cypress.Commands.add('logout', () => {
     cy.get('input[placeholder="Busca tu próxima función!"]').should('be.visible');
 });
 
+Cypress.Commands.add('pruebaHappy', (user) => {
+    cy.log('Ingresando nombres, apellidos, celular y dni')
+    cy.get('[data-cy="input-nombres"]').clear().type(user.nombres)
+    cy.get('[data-cy="input-apellido"]').clear().type(user.apellido)
+    cy.get('[data-cy="input-telefono"]').clear().type(user.telefono)
+    cy.get('[data-cy="input-dni"]').clear().type(user.dni)
+
+    cy.log('Seleccionar provincia y localidad')
+    cy.get('[data-cy="select-provincia"]').clear().type(user.provincia)
+    cy.get('ul > li > span').contains(user.provincia).click()
+    cy.get('[data-cy="select-localidad"]').clear().type(user.localidad)
+    cy.get('ul > li > span').contains(user.localidad).click()
+
+    cy.log('Ingresando fecha de nacimiento')
+    cy.get('[data-cy="input-fecha-nacimiento"] [data-type="day"]').clear().type(user.fechaNacimiento.day)
+    cy.get('[data-cy="input-fecha-nacimiento"] [data-type="month"]').clear().type(user.fechaNacimiento.month)
+    cy.get('[data-cy="input-fecha-nacimiento"] [data-type="year"]').clear().type(user.fechaNacimiento.year)
+
+    cy.log('Ingresando mail y confirmación')
+    cy.get('[data-cy="input-email"]').clear().type(user.email)
+    cy.get('[data-cy="input-confirmar-email"]').clear().type(user.email)
+
+    cy.log('Ingresando contraseña y confirmación')
+    cy.get('[data-cy="input-password"]').clear().type(user.password)
+    cy.get('[data-cy="input-repetir-password"]').clear().type(user.password)
+    cy.log('Presionando botón Registrar')
+    cy.get('[data-cy="btn-registrarse"]').click()
+});
 
 
 
