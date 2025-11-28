@@ -1,4 +1,4 @@
-import 'cypress-file-upload';
+import 'cypress-file-upload'; 
 
 Cypress.Commands.add('createUniqueEvent',()=>{
     cy.wait(1000)
@@ -40,7 +40,6 @@ Cypress.Commands.add('createUniqueEvent',()=>{
 
             cy.get('div > button').contains('Cargar Imagen Evento').click()
             cy.get('input[type="file"]').attachFile('images/eventoTest.jpg')
-            cy.wait(5000) //espera para que desaparezca un popup que tapa el botón siguiente
             cy.get('div > button').contains('Siguiente').click({force: true})
 
             cy.get('div > button').contains('Confirmar').click({force: true})
@@ -53,6 +52,6 @@ Cypress.Commands.add('createUniqueEvent',()=>{
             cy.url().should('eq', 'https://ticketazo.com.ar/')
 
         })
+  
+})
 
-
-})  
